@@ -8,10 +8,10 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 	// Uses the Google API COnsole project OAuth Client ID Credentials (e.g. clientID and clientSecret)
 	// "callbackURL" is the defined route on how the request will be handled later once a Google Login has been implemented
 passport.use(new GoogleStrategy({
-	clientID: process.env.clientID,
-	clientSecret: process.env.clientSecret,
-	callbackURL: "http://localhost:4000/users/google/callback",
-	passportReqToCallback: true
+	clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+	callbackURL: "https://course-booking-a5d56c632e96.herokuapp.com/",
+	passReqToCallback: true
 	},
 
 		// This is the callback function that gets executed when a user is successfully authenticated.
